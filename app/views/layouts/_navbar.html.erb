@@ -1,0 +1,11 @@
+<header>
+  <nav>
+    <% if user_signed_in? %>
+      <strong><%= link_to current_user.username page_show_path %></strong>
+      <%= link_to 'プロフィール編集', edit_user_registration %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: 'delete' %>
+    <% else %>
+      <%= link_to 'サインアップ', new_user_session_path %>
+    <% end %>
+  </nav>
+</header>
